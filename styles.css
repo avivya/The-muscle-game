@@ -1,0 +1,242 @@
+
+/* styles.css */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #2ecc71;
+    --error-color: #e74c3c;
+    --background-color: #f5f6fa;
+    --text-color: #2c3e50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Heebo', sans-serif;
+}
+
+body {
+    direction: rtl;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.game-page {
+    display: none;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+}
+
+.game-page.active {
+    display: block;
+}
+
+#page1 { background-image: url('background.png'); }
+/* #page2 { background-image: url('background.png'); } */
+#page3 { background-image: url('background.png'); }
+#page4 { background-image: url('background.png'); }
+#page5 { background-image: url('background.png'); }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.bone-input {
+    display: block;
+    width: 80%;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 3px solid var(--primary-color);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.game-button {
+    display: block;
+    margin: 1.5rem auto;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.game-button:hover {
+    background-color: #357abd;
+    transform: scale(1.05);
+}
+
+.score-display {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: var(--primary-color);
+}
+
+.muscle-map-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.muscle-map {
+    width: 100%;
+    height: auto;
+}
+
+.clickable {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clickable:hover {
+    opacity: 0.8;
+}
+
+.correct {
+    animation: correctAnswer 0.5s ease;
+    background-color: rgba(46, 204, 113, 0.3);
+}
+
+.incorrect {
+    animation: incorrectAnswer 0.5s ease;
+    background-color: rgba(231, 76, 60, 0.3);
+}
+
+@keyframes correctAnswer {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes incorrectAnswer {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+.hidden {
+    display: none;
+}
+
+.stars-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.star {
+    font-size: 2rem;
+    color: gold;
+    margin: 0 0.2rem;
+}
+
+.trophy-img {
+    display: block;
+    margin: 2rem auto;
+    max-width: 200px;
+}
+
+.completion-message {
+    text-align: center;
+}
+
+.final-score {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    color: var(--primary-color);
+}
+
+.feedback-display {
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.feedback-success {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: #27ae60;
+}
+
+.feedback-error {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #c0392b;
+}
+
+.muscle-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.muscle-option {
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.muscle-option:hover {
+    transform: scale(1.05);
+}
+
+.arm-simulator {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.arm-img {
+    width: 100%;
+    height: auto;
+}
+
+.muscle {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    background-color: rgba(74, 144, 226, 0.3);
+    border-radius: 20px;
+}
+
+#biceps {
+    top: 30%;
+    left: 40%;
+}
+
+#triceps {
+    top: 30%;
+    right: 40%;
+}
